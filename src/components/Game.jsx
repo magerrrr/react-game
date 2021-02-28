@@ -44,15 +44,39 @@ const Game = ({ myChoice, score, setScore }) => {
 
   return (
     <div className="game">
-      my choice: {myChoice} <br />
-      house choice: {house} <br />
-      Result:
-      {playerWin === "win" && <h2>WOW! You Win</h2>}
-      {playerWin === "lose" && <h2>Oops... You Lose</h2>}
-      {playerWin === "draw" && <h2>Draw!</h2>}
-      <Link to="/" onClick={() => setHouse()}>
-        Play again
-      </Link>
+      <div className="game__you">
+        <span className="text">You Picked</span>
+        <div className={`icon icon--${myChoice}`} />
+      </div>
+      {playerWin === "win" && (
+        <div className="game__play">
+          <span className="text">You win</span>
+          <Link to="/" className="play-again" onClick={() => setHouse()}>
+            Play again
+          </Link>
+        </div>
+      )}
+      {playerWin === "lose" && (
+        <div className="game__play">
+          <span className="text">You lose</span>
+          <Link to="/" className="play-again" onClick={() => setHouse()}>
+            Play again
+          </Link>
+        </div>
+      )}
+      {playerWin === "draw" && (
+        <div className="game__play">
+          <span className="text">Draw!</span>
+          <Link to="/" className="play-again" onClick={() => setHouse()}>
+            Play again
+          </Link>
+        </div>
+      )}
+
+      <div className="game__house">
+        <span className="text">The House Picked</span>
+        <div className={`icon icon--${house}`} />
+      </div>
     </div>
   );
 };
