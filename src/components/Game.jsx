@@ -5,6 +5,8 @@ const Game = ({ myChoice, score, setScore }) => {
   const [house, setHouse] = useState("");
   const [playerWin, setPlayerWin] = useState("");
 
+  const [counter, setCounter] = useState(3);
+
   const newHousePick = () => {
     const choices = ["rock", "paper", "scissors"];
     setHouse(choices[Math.floor(Math.random() * 3)]);
@@ -39,8 +41,17 @@ const Game = ({ myChoice, score, setScore }) => {
   }, []);
 
   useEffect(() => {
-    result();
-  }, [house]);
+    const timer =
+      counter > 0
+        ? setInterval(() => {
+            setCounter(counter - 1);
+          }, 1000)
+        : result();
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [counter, house]);
 
   return (
     <div className="game">
@@ -79,11 +90,15 @@ const Game = ({ myChoice, score, setScore }) => {
 
       <div className="game__house">
         <span className="text">The House Picked</span>
-        <div
-          className={`icon icon--${house} ${
-            playerWin === "lose" ? `icon icon--${house}--winner` : ""
-          }`}
-        />
+        {counter === 0 ? (
+          <div
+            className={`icon icon--${house} ${
+              playerWin === "lose" ? `icon icon--${house}--winner` : ""
+            }`}
+          />
+        ) : (
+          <div className="counter">{counter}</div>
+        )}
       </div>
     </div>
   );

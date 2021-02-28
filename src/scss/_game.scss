@@ -7,6 +7,7 @@
   &__you {
     display: flex;
     flex-direction: column;
+    margin-right: 2.5rem;
 
     .text {
       text-transform: uppercase;
@@ -78,6 +79,7 @@
   &__house {
     display: flex;
     flex-direction: column;
+    margin-left: 2.5rem;
 
     .text {
       text-transform: uppercase;
@@ -116,6 +118,18 @@
           @include bigShadow($rock-gradient);
         }
       }
+    }
+
+    .counter {
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      background-color: rgba($color: #000000, $alpha: .3);
+      font-size: 8rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
 }
