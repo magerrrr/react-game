@@ -5,3 +5,11 @@
   background-repeat: no-repeat;
   border-color: $color;
 }
+
+@mixin bigShadow($color) {
+  box-shadow: inset 0 5px 6px grey,
+  0 8px darken($color, 15%),
+  0 0 0 50px rgba(#ffffff, .07),
+  0 0 0 100px rgba(#ffffff, .05),
+  0 0 0 150px rgba(#ffffff, .025);
+}

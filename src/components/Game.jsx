@@ -46,7 +46,11 @@ const Game = ({ myChoice, score, setScore }) => {
     <div className="game">
       <div className="game__you">
         <span className="text">You Picked</span>
-        <div className={`icon icon--${myChoice}`} />
+        <div
+          className={`icon icon--${myChoice} ${
+            playerWin === "win" ? `icon icon--${myChoice}--winner` : ""
+          }`}
+        />
       </div>
       {playerWin === "win" && (
         <div className="game__play">
@@ -75,7 +79,11 @@ const Game = ({ myChoice, score, setScore }) => {
 
       <div className="game__house">
         <span className="text">The House Picked</span>
-        <div className={`icon icon--${house}`} />
+        <div
+          className={`icon icon--${house} ${
+            playerWin === "lose" ? `icon icon--${house}--winner` : ""
+          }`}
+        />
       </div>
     </div>
   );
