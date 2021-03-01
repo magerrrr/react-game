@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import { KEYS, useKey } from "../hooks/useKey";
 
 const Footer = () => {
   const [modal, setModal] = useState(false);
@@ -7,6 +8,13 @@ const Footer = () => {
   const toggle = () => {
     setModal(!modal);
   };
+
+  const closeModal = () => {
+    setModal(false);
+  };
+
+  useKey(KEYS.R, toggle);
+  useKey(KEYS.ESCAPE, closeModal);
 
   return (
     <>
