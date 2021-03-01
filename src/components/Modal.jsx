@@ -13,7 +13,7 @@ const Modal = ({ toggle }) => {
             <img src={close} alt="Close" />
           </button>
         </div>
-        <img src={rules} alt="Rules" />
+        <img src={rules} alt="Rules" className="img-rules" />
 
         <div className="modal__footer">
           <h3>keyboard shortcuts:</h3>

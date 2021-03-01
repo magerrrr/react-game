@@ -11,9 +11,12 @@
     color: $dark-text;
     background-color: #fff;
     border-radius: 8px;
+    min-width: 304px;
+    min-height: 505px;
 
-    img {
+    img.img-rules {
       width: 80%;
+      min-height: 216px;
     }
 
     .modal__header {
