@@ -38,6 +38,10 @@ const Modal = ({ toggle }) => {
               <button>R</button>
               <span>Show rules</span>
             </div>
+            <div className="footer__item">
+              <button>Y</button>
+              <span>Reset score</span>
+            </div>
           </div>
         </div>
       </div>
