@@ -1,9 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Triangle from "../images/bg-triangle.svg";
+import { KEYS, useKey } from "../hooks/useKey";
 
 const Play = ({ setMyChoice }) => {
   const setChoice = (e) => setMyChoice(e.target.dataset.id);
+  const history = useHistory();
+
+  const handlePaper = () => {
+    setMyChoice("paper");
+    history.push("/game");
+  };
+
+  const handleScissors = () => {
+    setMyChoice("scissors");
+    history.push("/game");
+  };
+
+  const handleRock = () => {
+    setMyChoice("rock");
+    history.push("/game");
+  };
+
+  useKey(KEYS.Q, handlePaper);
+  useKey(KEYS.W, handleScissors);
+  useKey(KEYS.A, handleRock);
 
   return (
     <div className="play">
