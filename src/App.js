@@ -5,6 +5,7 @@ import Play from "./components/Play";
 import Game from "./components/Game";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
+import { KEYS, useKey } from "./hooks/useKey";
 
 function App() {
   const [myChoice, setMyChoice] = useState("");
@@ -17,6 +18,8 @@ function App() {
   useEffect(() => {
     localStorage.setItem("score", score);
   }, [score]);
+
+  useKey(KEYS.Y, handleReset);
 
   return (
     <>

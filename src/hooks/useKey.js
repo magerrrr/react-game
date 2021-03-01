@@ -18,6 +18,7 @@ export const KEYS = {
   W: "KeyW",
   A: "KeyA",
   R: "KeyR",
+  Y: "KeyY",
   SPACE: "Space",
   ESCAPE: "Escape",
 };
