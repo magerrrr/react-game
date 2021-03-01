@@ -12,3 +12,12 @@ export const useKey = (key, cb) => {
     return () => document.removeEventListener("keydown", handle);
   }, [key, cb]);
 };
+
+export const KEYS = {
+  Q: "KeyQ",
+  W: "KeyW",
+  A: "KeyA",
+  R: "KeyR",
+  SPACE: "Space",
+  ESCAPE: "Escape",
+};
