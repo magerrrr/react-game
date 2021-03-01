@@ -24,11 +24,33 @@
     background-color: #fff;
     color: $score-text;
     border-radius: 5px;
+    position: relative;
 
     &__score {
       color: $dark-text;
       font-size: 3.5rem;
       font-weight: 700;
+    }
+
+    &__button-reset {
+      position: absolute;
+      height: 18px;
+      width: 60px;
+      bottom: -9px;
+      right: 28px;
+      background-color: #dc3545;
+      color: #fff;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      outline: none;
+      text-transform: uppercase;
+      transition: all .15s;
+      font-size: 10px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }

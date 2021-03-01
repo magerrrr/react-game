@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router";
 import Header from "./components/Header";
 import Play from "./components/Play";
@@ -8,12 +8,20 @@ import NotFound from "./components/NotFound";
 
 function App() {
   const [myChoice, setMyChoice] = useState("");
-  const [score, setScore] = useState(0);
+  const localStoreInitialValue = localStorage.getItem("score")
+    ? +localStorage.getItem("score")
+    : 0;
+  const [score, setScore] = useState(localStoreInitialValue);
+  const handleReset = () => setScore(0);
+
+  useEffect(() => {
+    localStorage.setItem("score", score);
+  }, [score]);
 
   return (
     <>
       <div className="container">
-        <Header score={score} />
+        <Header score={score} onReset={handleReset} />
         <Switch>
           <Route exact path="/">
             <Play setMyChoice={setMyChoice} />
