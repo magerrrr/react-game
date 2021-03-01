@@ -11,21 +11,64 @@
     color: $dark-text;
     background-color: #fff;
     border-radius: 8px;
-    padding: 30px;
 
     img {
-      width: 100%;
+      width: 80%;
     }
 
     .modal__header {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      padding: 20px 20px 0;
 
       h1 {
         text-transform: uppercase;
         margin: 0;
         padding: 0;
+      }
+    }
+
+    .modal__footer{
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #e1e4ed;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      padding: 10px;
+
+      h3 {
+        margin-top: 0;
+        text-transform: uppercase;
+        text-align: left;
+      }
+
+      .footer__items {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 5px 50px;
+      }
+
+      .footer__item {
+        display: flex;
+        justify-content: space-between;
+        margin: 3px 0;
+      }
+
+      button {
+        border: 1px solid black;
+        border-radius: 2px;
+        padding: 2px 5px;
+        margin-right: 5px;
+        color: $dark-text;
+        font-weight: 700;
+      }
+
+      span {
+        color: $dark-text;
       }
     }
   }

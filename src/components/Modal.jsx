@@ -14,6 +14,32 @@ const Modal = ({ toggle }) => {
           </button>
         </div>
         <img src={rules} alt="Rules" />
+
+        <div className="modal__footer">
+          <h3>keyboard shortcuts:</h3>
+          <div className="footer__items">
+            <div className="footer__item">
+              <button>Q</button>
+              <span>Pick paper</span>
+            </div>
+            <div className="footer__item">
+              <button>W</button>
+              <span>Pick scissors</span>
+            </div>
+            <div className="footer__item">
+              <button>A</button>
+              <span>Pick rock</span>
+            </div>
+            <div className="footer__item">
+              <button>Space</button>
+              <span>Play again</span>
+            </div>
+            <div className="footer__item">
+              <button>R</button>
+              <span>Show rules</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>,
     document.getElementById("modal")
