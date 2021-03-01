@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { KEYS, useKey } from "../hooks/useKey";
 
 const Game = ({ myChoice, score, setScore }) => {
   const [house, setHouse] = useState("");
   const [playerWin, setPlayerWin] = useState("");
-
   const [counter, setCounter] = useState(3);
+  const history = useHistory();
 
   const newHousePick = () => {
     const choices = ["rock", "paper", "scissors"];
     setHouse(choices[Math.floor(Math.random() * 3)]);
   };
+
+  const handleSpace = () => {
+    setHouse();
+    history.push("/");
+  };
+
+  useKey(KEYS.SPACE, handleSpace);
 
   const result = () => {
     if (myChoice === "rock" && house === "scissors") {
