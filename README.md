@@ -1,4 +1,5 @@
 # React game
+You can open this link to see deployed [DEMO](https://react-game-magerrrr.vercel.app/).
 
 ## Description
 
