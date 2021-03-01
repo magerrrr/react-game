@@ -20,7 +20,7 @@ const Footer = () => {
           <a href="https://rs.school/js/" target="_blank" className="link">
             The Rolling Scopes School
           </a>
-          . Github:
+          . GitHub:
           <a href="https://github.com/magerrrr" className="link">
             Kirill Mager
           </a>
