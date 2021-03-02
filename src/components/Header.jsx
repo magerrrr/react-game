@@ -4,6 +4,7 @@ import resettingSound from "../sounds/resetting.wav";
 
 const Header = ({ score, onReset }) => {
   const [playResetSound] = useSound(resettingSound);
+  const isNotZero = score !== 0;
 
   const handleClick = () => {
     playResetSound();
@@ -20,7 +21,7 @@ const Header = ({ score, onReset }) => {
       <div className="score-box">
         <span>Score</span>
         <div className="score-box__score">{score}</div>
-        {score !== 0 && (
+        {isNotZero && (
           <button onClick={handleClick} className="score-box__button-reset">
             Reset
           </button>
