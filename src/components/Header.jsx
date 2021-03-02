@@ -1,6 +1,15 @@
 import React from "react";
+import useSound from "use-sound";
+import resettingSound from "../sounds/resetting.wav";
 
 const Header = ({ score, onReset }) => {
+  const [playResetSound] = useSound(resettingSound);
+
+  const handleClick = () => {
+    playResetSound();
+    onReset();
+  };
+
   return (
     <div className="header">
       <div className="text">
@@ -12,7 +21,7 @@ const Header = ({ score, onReset }) => {
         <span>Score</span>
         <div className="score-box__score">{score}</div>
         {score !== 0 && (
-          <button onClick={onReset} className="score-box__button-reset">
+          <button onClick={handleClick} className="score-box__button-reset">
             Reset
           </button>
         )}
