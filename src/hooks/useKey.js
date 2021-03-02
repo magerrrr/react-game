@@ -24,10 +24,11 @@ export const KEYS = {
 };
 
 export const keyboardShortcuts = [
-  { key: KEYS.Q, description: "Pick paper" },
-  { key: KEYS.W, description: "Pick scissors" },
-  { key: KEYS.A, description: "Pick rock" },
-  { key: KEYS.SPACE, description: "Play again" },
-  { key: KEYS.R, description: "Show rules" },
-  { key: KEYS.Y, description: "Reset score" },
+  { key: "Q", description: "Pick paper" },
+  { key: "W", description: "Pick scissors" },
+  { key: "A", description: "Pick rock" },
+  { key: "Space", description: "Play again" },
+  { key: "R", description: "Show rules" },
+  { key: "Escape", description: "Hide rules" },
+  { key: "Y", description: "Reset score" },
 ];
