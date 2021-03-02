@@ -22,3 +22,12 @@ export const KEYS = {
   SPACE: "Space",
   ESCAPE: "Escape",
 };
+
+export const keyboardShortcuts = [
+  { key: KEYS.Q, description: "Pick paper" },
+  { key: KEYS.W, description: "Pick scissors" },
+  { key: KEYS.A, description: "Pick rock" },
+  { key: KEYS.SPACE, description: "Play again" },
+  { key: KEYS.R, description: "Show rules" },
+  { key: KEYS.Y, description: "Reset score" },
+];
